@@ -1,10 +1,10 @@
 //compareTo -- boolean
 //https://deepeshdarshan.wordpress.com/2013/01/17/finding-max-value-using-java-generics/
 package com.generics;
-/*@Description:- Given 3 Integers find the maximum
-*Given Max Number at 1st Position return the Same Number
-* Given Max Number at 2nd Position return the Same Number
-* Given Max Number at 3rd Position return the Same Number
+/*@Description:- Given 3 Floats find the maximum
+ *Given Max at 1st Position return the Same Number
+ *Given Max at 2nd Position return the Same Number
+ *Given Max at 3rd Position return the Same Number
  */
 
 public class FindMaxGeneric{
