@@ -3,70 +3,30 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class FindMaxGenericTest {
-    private static final FindMaxGeneric findMax = new FindMaxGeneric();
+    //private static final FindMaxGeneric findMax = new FindMaxGeneric(null, null, null);
+    private static FindMaxGeneric findMax;
 
     @Test
-    public void whenGivenThreeIntegers_AndFirstNumberIsMax_ShouldReturn_true() {
-        Integer[] intArray = {30, 20, 10};
-        Integer result = findMax.findMaximum(intArray);
-        Assertions.assertEquals(Integer.valueOf(intArray[0]), result);
+    public void whenGivenThreeNumbers_ShouldReturnMaximumInteger() {
+        Integer i1 = 10, i2 = 25, i3 = 20;
+        findMax = new FindMaxGeneric(i1, i2, i3);
+        Object result = findMax.findMaximum();  //stored in obj
+        Assertions.assertEquals(i2, result);
     }
 
     @Test
-    public void whenGivenThreeIntegers_AndSecondNumberIsMax_ShouldReturn_true() {
-        Integer[] intArray = {10, 30, 20};
-        Integer result = findMax.findMaximum(intArray);
-        Assertions.assertEquals(Integer.valueOf(30), result);
+    public void whenGivenThreeFloatValues_ShouldReturnMaximumFloat() {
+        Float f1=2.5f, f2=5.5f, f3=10.25f;
+        findMax = new FindMaxGeneric(f1,f2,f3);
+        Comparable result=findMax.findMaximum(); //Inorder to use object,i am using comparable type
+        Assertions.assertEquals(f3, result);
+    }
+    @Test
+    public void whenGivenThreeStrings_ShouldReturnMaximumString() {
+        String s1="Promogranate",s2="Orange",s3="Gua";
+        findMax=new FindMaxGeneric(s1,s2,s3);
+        String result=(String) findMax.findMaximum(); //typecasting
+        Assertions.assertEquals(s1,result);
     }
 
-    @Test
-    public void whenGivenThreeIntegers_AndThirdNumberIsMax_ShouldReturn_true() {
-        Integer[] intArray = {10, 20, 30};
-        Integer result = findMax.findMaximum(intArray);
-        Assertions.assertEquals(Integer.valueOf(30), result);
-    }
-
-    //Maximum finding for float values
-    @Test
-    public void whenGivenThreeFloatValues_AndFisrtNumberIsMax_ShouldReturn_true() {
-        Float[] floatArray= {3.5f,1.5f,2.5f};
-        Float result=findMax.findMaximum(floatArray);
-        Assertions.assertEquals(floatArray[0], result);
-    }
-
-    @Test
-    public void whenGivenThreeFloatValues_AndSecondNumberIsMax_ShouldReturnTrue() {
-        Float[] floatArray= {1.5f,3.5f,2.5f};
-        Float result=findMax.findMaximum(floatArray);
-        Assertions.assertEquals(floatArray[1], result);
-    }
-
-    @Test
-    public void whenGivenThreeFloatValues_AndThirdNumberIsMax_ShouldReturnTrue() {
-        Float[] floatArray= {1.5f,2.5f,3.5f};
-        Float result=findMax.findMaximum(floatArray);
-        Assertions.assertEquals(floatArray[2], result);
-    }
-
-    //finding max of strings
-    @Test
-    public void whenGivenThreeStrings_AndFirstStringIsMax_ShouldReturn_true() {
-        String [] stringArray = {"Promogranate", "Gua", "Orange"};
-        String result = findMax.findMaximum(stringArray);
-        Assertions.assertEquals("Promogranate", result);
-    }
-
-    @Test
-    public void whenGivenThreeStrings_AndSecondStringIsMax_ShouldReturn_true() {
-        String [] stringArray = { "Gua","Promogranate", "Orange"};
-        String result = findMax.findMaximum(stringArray);
-        Assertions.assertEquals("Promogranate", result);
-    }
-
-    @Test
-    public void whenGivenThreeStrings_AndThirdStringIsMax_ShouldReturn_true() {
-        String [] stringArray = { "Gua", "Orange","Promogranate"};
-        String result = findMax.findMaximum(stringArray);
-        Assertions.assertEquals("Promogranate", result);
-    }
 }
