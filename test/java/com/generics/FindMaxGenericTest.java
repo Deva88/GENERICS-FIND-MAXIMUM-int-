@@ -1,5 +1,4 @@
 package com.generics;
-
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -41,6 +40,7 @@ public class FindMaxGenericTest {
         Float result=findMax.findMaximum(floatArray);
         Assertions.assertEquals(floatArray[1], result);
     }
+
     @Test
     public void whenGivenThreeFloatValues_AndThirdNumberIsMax_ShouldReturnTrue() {
         Float[] floatArray= {1.5f,2.5f,3.5f};
@@ -48,4 +48,25 @@ public class FindMaxGenericTest {
         Assertions.assertEquals(floatArray[2], result);
     }
 
+    //finding max of strings
+    @Test
+    public void whenGivenThreeStrings_AndFirstStringIsMax_ShouldReturn_true() {
+        String [] stringArray = {"Promogranate", "Gua", "Orange"};
+        String result = findMax.findMaximum(stringArray);
+        Assertions.assertEquals("Promogranate", result);
+    }
+
+    @Test
+    public void whenGivenThreeStrings_AndSecondStringIsMax_ShouldReturn_true() {
+        String [] stringArray = { "Gua","Promogranate", "Orange"};
+        String result = findMax.findMaximum(stringArray);
+        Assertions.assertEquals("Promogranate", result);
+    }
+
+    @Test
+    public void whenGivenThreeStrings_AndThirdStringIsMax_ShouldReturn_true() {
+        String [] stringArray = { "Gua", "Orange","Promogranate"};
+        String result = findMax.findMaximum(stringArray);
+        Assertions.assertEquals("Promogranate", result);
+    }
 }
